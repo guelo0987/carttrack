@@ -155,6 +155,7 @@ class Register3Screen3 extends StatelessWidget {
                           top: 0,
                           child: BackArrowButton(
                               onPressed: () => Navigator.pop(context),
+                              iconPath: 'images/icons/left_arrow_white.png'
                             )
                         ),
                           ],

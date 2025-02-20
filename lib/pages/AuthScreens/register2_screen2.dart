@@ -192,6 +192,7 @@ class _Register2Screen2State extends State<Register2Screen2> {
                               top: 0,
                               child: BackArrowButton(
                                 onPressed: () => Navigator.pop(context),
+                                  iconPath: 'images/icons/left_arrow_white.png'
                               ),
                             ),
                           ],

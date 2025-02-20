@@ -1,9 +1,11 @@
+import 'package:carttrack/pages/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import '../components/go_back.dart';
+import '../components/main_button.dart';
 
-class Recover2Screen2 extends StatelessWidget {
-  Recover2Screen2({Key? key}) : super(key: key);
+class Recover3Screen3 extends StatelessWidget {
+  Recover3Screen3({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,8 @@ class Recover2Screen2 extends StatelessWidget {
                       child: Container(
                         width: 326,
                         height: 683,
-                        margin: const EdgeInsets.only(top: 64, left: 25, right: 25),
+                        margin:
+                            const EdgeInsets.only(top: 64, left: 25, right: 25),
                         padding: const EdgeInsets.all(24),
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
@@ -71,9 +74,10 @@ class Recover2Screen2 extends StatelessWidget {
                                   ),
                                   const SizedBox(height: 20),
                                   Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20.0),
                                     child: Text(
-                                      'Revisa tu bandeja de entrada y sigue los pasos en el correo recibido.',
+                                      'Lo sentimos, example@example correo no está registrado en CarTrac.',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         color: Colors.white.withOpacity(0.8),
@@ -83,14 +87,22 @@ class Recover2Screen2 extends StatelessWidget {
                                       ),
                                     ),
                                   ),
+                                  SizedBox(height: 30,),
+                                  MainButton(
+                                    text: 'Crear cuenta',
+                                    onPressed: () {
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterScreen()));
+                                    },
+                                  ),
                                 ],
                               ),
                             ),
-                             Positioned(
+                            Positioned(
                               left: 0,
                               top: 0,
                               child: BackArrowButton(
-                                onPressed: ()=>Navigator.pop(context),
+                                onPressed: () => Navigator.pop(context),
+                                  iconPath: 'images/icons/left_arrow_white.png'
                               ),
                             ),
                           ],
