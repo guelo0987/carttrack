@@ -1,7 +1,7 @@
-import 'package:carttrack/pages/register_screen.dart';
+import 'package:carttrack/pages/AuthScreens/register_screen.dart';
 import 'package:flutter/material.dart';
-import '../components/main_button.dart';
-import 'login_screen.dart';
+import '../../components/main_button.dart';
+import '../AuthScreens/login_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -48,7 +48,10 @@ class SplashScreen extends StatelessWidget {
                     backgroundColor: const Color(0xFF0500C6),
                     textColor: Colors.white,
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterScreen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RegisterScreen()));
                     },
                   ),
                 ],

@@ -1,9 +1,9 @@
-import 'package:carttrack/pages/register2_screen2.dart';
+import 'package:carttrack/pages/AuthScreens/register2_screen2.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
-import '../components/custom_form.dart';
-import '../components/main_button.dart';
-import 'login_screen.dart';
+import '../../components/custom_form.dart';
+import '../../components/main_button.dart';
+import '../AuthScreens/login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   RegisterScreen({Key? key}) : super(key: key);
@@ -89,8 +89,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 value:
                                     0.4, // Aquí controlarás el progreso (0.0 a 1.0)
                                 backgroundColor: Colors.white,
-                                valueColor:
-                                    AlwaysStoppedAnimation<Color>(Color(0xFF0500C6)),
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                    Color(0xFF0500C6)),
                                 minHeight: 3,
                               ),
                             ),
@@ -136,7 +136,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     // Procesar formulario
                                   }
 
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Register2Screen2()));
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              Register2Screen2()));
                                 },
                               ),
                               MainButton(

@@ -1,9 +1,10 @@
-import 'package:carttrack/pages/recover_screen.dart';
-import 'package:carttrack/pages/register_screen.dart';
+import 'package:carttrack/pages/AuthScreens/recover_screen.dart';
+import 'package:carttrack/pages/AuthScreens/register_screen.dart';
+import 'package:carttrack/pages/CartTrackScreens/Dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
-import '../components/custom_form.dart';
-import '../components/main_button.dart';
+import '../../components/custom_form.dart';
+import '../../components/main_button.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -38,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
           minimum: EdgeInsets.zero, //
           child: SingleChildScrollView(
             physics:
-            const ClampingScrollPhysics(), // Mejor comportamiento de scroll
+                const ClampingScrollPhysics(), // Mejor comportamiento de scroll
             child: Container(
               // 4. Forzar altura completa
               constraints: BoxConstraints(
@@ -54,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Container(
                         width: 326,
                         margin:
-                        const EdgeInsets.only(top: 64, left: 25, right: 25),
+                            const EdgeInsets.only(top: 64, left: 25, right: 25),
                         padding: const EdgeInsets.all(24),
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
@@ -118,13 +119,17 @@ class _LoginScreenState extends State<LoginScreen> {
                                     if (formKey.currentState!.validate()) {
                                       // Procesar formulario
                                     }
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>DashboardScreen()));
                                   },
                                 ),
                                 MainButton(
                                   text: 'Crear una cuenta',
                                   onPressed: () {
-
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> RegisterScreen()));
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                RegisterScreen()));
                                   },
                                   transparent: true,
                                   textColor: Colors.white,
@@ -134,15 +139,18 @@ class _LoginScreenState extends State<LoginScreen> {
                               extraWidgets: [
                                 TextButton(
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>RecoverScreen()));
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                RecoverScreen()));
                                   },
                                   child: const Text(
                                     'He olvidado mi contraseña',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontFamily: 'Mundial',
-                                        fontWeight: FontWeight.bold
-                                    ),
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ),
                               ],
@@ -161,4 +169,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-

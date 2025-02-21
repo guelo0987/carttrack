@@ -1,7 +1,7 @@
 import 'package:carttrack/components/main_button.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
-import 'package:carttrack/pages/register4_screen4.dart';
+import 'package:carttrack/pages/AuthScreens/register4_screen4.dart';
 import 'package:carttrack/components/go_back.dart';
 
 class Register3Screen3 extends StatelessWidget {

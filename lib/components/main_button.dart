@@ -8,6 +8,9 @@ class MainButton extends StatelessWidget {
   final Color? borderColor;
   final Color? backgroundColor;
   final Widget? icon;
+  final double? width;
+  final double? height;
+  final EdgeInsetsGeometry? margin;
 
   const MainButton({
     required this.text,
@@ -17,20 +20,23 @@ class MainButton extends StatelessWidget {
     this.borderColor,
     this.backgroundColor,
     this.icon,
+    this.width,
+    this.height,
+    this.margin,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 264,
-      margin: const EdgeInsets.symmetric(vertical: 13),
+      width: width ?? 264,
+      margin: margin ?? const EdgeInsets.symmetric(vertical: 13),
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: transparent ? Colors.transparent : backgroundColor,
           side: borderColor != null ? BorderSide(color: borderColor!) : null,
-          fixedSize: const Size(264, 80),
+          fixedSize: Size(width ?? 264, height ?? 80),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25),
           ),

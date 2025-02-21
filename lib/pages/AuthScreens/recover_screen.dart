@@ -1,10 +1,10 @@
-import 'package:carttrack/pages/recover2_screen2.dart';
-import 'package:carttrack/pages/recover3_screen3.dart';
+import 'package:carttrack/pages/AuthScreens/recover2_screen2.dart';
+import 'package:carttrack/pages/AuthScreens/recover3_screen3.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
-import '../components/custom_form.dart';
-import '../components/main_button.dart';
-import '../components/go_back.dart';
+import '../../components/custom_form.dart';
+import '../../components/main_button.dart';
+import '../../components/go_back.dart';
 
 class RecoverScreen extends StatefulWidget {
   RecoverScreen({Key? key}) : super(key: key);
@@ -119,7 +119,7 @@ class _RecoverScreenState extends State<RecoverScreen> {
 
                                       //Cambiar el route de acuerdo a la logica del formulario, por ejemplo si no existe lo lleva al Recover Screen 3
                                       //Si si existe lo lleva al Recover Screen 2
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Recover3Screen3()));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Recover2Screen2()));
                                     },
                                   ),
                                 ]),

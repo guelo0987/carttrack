@@ -1,11 +1,11 @@
-import 'package:carttrack/pages/register3_screen3.dart';
+import 'package:carttrack/pages/AuthScreens/register3_screen3.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
-import '../components/custom_form.dart';
-import '../components/main_button.dart';
+import '../../components/custom_form.dart';
+import '../../components/main_button.dart';
 import 'package:flutter/services.dart';
 import 'package:easy_mask/easy_mask.dart';
-import '../components/go_back.dart';
+import '../../components/go_back.dart';
 
 class Register2Screen2 extends StatefulWidget {
   const Register2Screen2({Key? key}) : super(key: key);
@@ -38,9 +38,9 @@ class _Register2Screen2State extends State<Register2Screen2> {
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/background.png'),
-              fit: BoxFit.cover,
-            )),
+          image: AssetImage('images/background.png'),
+          fit: BoxFit.cover,
+        )),
         child: SafeArea(
           bottom: false,
           top: false,
@@ -61,7 +61,7 @@ class _Register2Screen2State extends State<Register2Screen2> {
                       child: Container(
                         width: 326,
                         margin:
-                        const EdgeInsets.only(top: 64, left: 25, right: 25),
+                            const EdgeInsets.only(top: 64, left: 25, right: 25),
                         padding: const EdgeInsets.all(24),
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
@@ -101,8 +101,8 @@ class _Register2Screen2State extends State<Register2Screen2> {
                                     value: 0.7,
                                     backgroundColor: Colors.white,
                                     valueColor:
-                                    const AlwaysStoppedAnimation<Color>(
-                                        Color(0xFF0500C6)),
+                                        const AlwaysStoppedAnimation<Color>(
+                                            Color(0xFF0500C6)),
                                     minHeight: 3,
                                   ),
                                 ),
@@ -179,7 +179,7 @@ class _Register2Screen2State extends State<Register2Screen2> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                const Register3Screen3()));
+                                                    const Register3Screen3()));
                                       }
                                     },
                                   )
@@ -191,9 +191,9 @@ class _Register2Screen2State extends State<Register2Screen2> {
                               left: 0,
                               top: 0,
                               child: BackArrowButton(
-                                onPressed: () => Navigator.pop(context),
-                                  iconPath: 'images/icons/left_arrow_white.png'
-                              ),
+                                  onPressed: () => Navigator.pop(context),
+                                  iconPath:
+                                      'images/icons/left_arrow_white.png'),
                             ),
                           ],
                         ),

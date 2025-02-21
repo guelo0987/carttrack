@@ -1,8 +1,8 @@
-import 'package:carttrack/pages/register_screen.dart';
+import 'package:carttrack/pages/AuthScreens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
-import '../components/go_back.dart';
-import '../components/main_button.dart';
+import '../../components/go_back.dart';
+import '../../components/main_button.dart';
 
 class Recover3Screen3 extends StatelessWidget {
   Recover3Screen3({Key? key}) : super(key: key);

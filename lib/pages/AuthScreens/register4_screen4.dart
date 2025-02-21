@@ -1,7 +1,8 @@
+import 'package:carttrack/pages/CartTrackScreens/Dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
-import '../components/go_back.dart';
-import '../components/main_button.dart';
+import '../../components/go_back.dart';
+import '../../components/main_button.dart';
 
 class Register4Screen4 extends StatelessWidget {
   final String membershipType;
@@ -167,7 +168,7 @@ class Register4Screen4 extends StatelessWidget {
                                         MainButton(
                                           text: 'Elegir membresía',
                                           onPressed: () {
-                                            // Acción del botón
+                                            Navigator.push(context, MaterialPageRoute(builder: (context)=>DashboardScreen()));
                                           },
                                           backgroundColor:
                                               const Color(0xFF0500C6),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
-import '../components/go_back.dart';
+import '../../components/go_back.dart';
 
 class Recover2Screen2 extends StatelessWidget {
   Recover2Screen2({Key? key}) : super(key: key);
