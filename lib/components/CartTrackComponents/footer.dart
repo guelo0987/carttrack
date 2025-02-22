@@ -1,4 +1,5 @@
 import 'package:carttrack/pages/CitasScreens/Citas_screen.dart';
+import 'package:carttrack/pages/CitasScreens/Crear_citas_screen.dart';
 import 'package:carttrack/pages/CitasScreens/Solicitar_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:carttrack/pages/MyAccountScreens/Dashboard_screen.dart';
@@ -25,7 +26,7 @@ class _FooterState extends State<Footer> {
         break;
       case 1:
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => SolicitarDetailScreen()));
+            context, MaterialPageRoute(builder: (context) => CrearCitasScreen()));
         break;
     }
   }

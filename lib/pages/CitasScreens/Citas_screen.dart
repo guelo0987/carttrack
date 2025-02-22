@@ -1,4 +1,5 @@
 import 'package:carttrack/pages/CitasScreens/Crear_citas_screen.dart';
+import 'package:carttrack/pages/CitasScreens/Programar_cita_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
@@ -68,7 +69,7 @@ class _CitasScreenState extends State<CitasScreen> {
               Expanded(
                 child: SingleChildScrollView(
                   controller: _scrollController,
-                  physics: const ClampingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24),
                     child: Column(
@@ -86,7 +87,7 @@ class _CitasScreenState extends State<CitasScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            CrearCitasScreen()));
+                                            ProgramarCitaScreen()));
                               },
                               backgroundColor: const Color(0xFF0500C6),
                               textColor: Colors.white,
@@ -95,7 +96,7 @@ class _CitasScreenState extends State<CitasScreen> {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 40),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16),
                           child: Column(
@@ -156,7 +157,7 @@ class _CitasScreenState extends State<CitasScreen> {
                                   ],
                                 ),
                               ),
-                              const SizedBox(height: 14),
+                              const SizedBox(height: 40),
                               const Text(
                                 "Pendiente (0)",
                                 style: TextStyle(
@@ -175,7 +176,7 @@ class _CitasScreenState extends State<CitasScreen> {
                                   fontFamily: 'Mundial',
                                 ),
                               ),
-                              const SizedBox(height: 14),
+                              const SizedBox(height: 40),
                               const Text(
                                 "Calendario de Citas",
                                 style: TextStyle(
@@ -196,6 +197,7 @@ class _CitasScreenState extends State<CitasScreen> {
                                   });
                                 },
                               ),
+                              SizedBox(height: 100)
                             ],
                           ),
                         ),
