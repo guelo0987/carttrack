@@ -1,4 +1,4 @@
-import 'package:carttrack/pages/CartTrackScreens/Dashboard_screen.dart';
+import 'package:carttrack/pages/MyAccountScreens/Dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import '../../components/go_back.dart';

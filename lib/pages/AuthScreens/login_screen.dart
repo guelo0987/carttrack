@@ -1,6 +1,6 @@
 import 'package:carttrack/pages/AuthScreens/recover_screen.dart';
 import 'package:carttrack/pages/AuthScreens/register_screen.dart';
-import 'package:carttrack/pages/CartTrackScreens/Dashboard_screen.dart';
+import 'package:carttrack/pages/MyAccountScreens/Dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import '../../components/custom_form.dart';

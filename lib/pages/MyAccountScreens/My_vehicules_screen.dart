@@ -1,5 +1,5 @@
 import 'package:carttrack/components/CartTrackComponents/header.dart';
-import 'package:carttrack/pages/CartTrackScreens/Vehicle_detail_screen.dart';
+import 'package:carttrack/pages/MyAccountScreens/Vehicle_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:carttrack/components/CartTrackComponents/cards.dart';
 import 'package:carttrack/components/CartTrackComponents/footer.dart';

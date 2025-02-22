@@ -1,7 +1,7 @@
 import 'package:carttrack/components/CartTrackComponents/header.dart';
-import 'package:carttrack/pages/CartTrackScreens/Membresia_screen.dart';
-import 'package:carttrack/pages/CartTrackScreens/My_vehicules_screen.dart';
-import 'package:carttrack/pages/CartTrackScreens/Personal_data_screen.dart';
+import 'package:carttrack/pages/MyAccountScreens/Membresia_screen.dart';
+import 'package:carttrack/pages/MyAccountScreens/My_vehicules_screen.dart';
+import 'package:carttrack/pages/MyAccountScreens/Personal_data_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:carttrack/components/CartTrackComponents/cards.dart';
 import 'package:carttrack/components/CartTrackComponents/footer.dart';

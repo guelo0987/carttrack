@@ -1,4 +1,5 @@
-import 'package:carttrack/pages/CartTrackScreens/Account_screen.dart';
+import 'package:carttrack/pages/CitasScreens/Citas_screen.dart';
+import 'package:carttrack/pages/MyAccountScreens/Account_screen.dart';
 import 'package:flutter/material.dart';
 import '../../components/CartTrackComponents/header.dart';
 import '../../components/CartTrackComponents/footer.dart';
@@ -75,7 +76,8 @@ class DashboardScreen extends StatelessWidget {
                 description: "Agenda, revisa o cancela tus citas.",
                 iconPath: "images/icons/citas_card.png",
                 onTap: () {
-                  // Acción al presionar la tarjeta
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => CitasScreen()));
                 },
               ),
               const SizedBox(height: 16), // Espacio entre cards
@@ -83,9 +85,7 @@ class DashboardScreen extends StatelessWidget {
                 title: "Historial",
                 description: "Documentación de todos los sevicios.",
                 iconPath: "images/icons/historial.png",
-                onTap: () {
-                  // Acción al presionar la tarjeta
-                },
+                onTap: () {},
               ),
             ],
           ),

@@ -9,6 +9,8 @@ class Header extends StatelessWidget {
   final String? backArrowColor;
   final String? title;
   final String? icon;
+  final EdgeInsetsGeometry? titlePadding;
+  final double? widthA;
 
   const Header(
       {super.key,
@@ -18,7 +20,9 @@ class Header extends StatelessWidget {
       this.onBackPressed,
       this.backArrowColor = 'images/icons/left_arrow_white.png',
       this.title,
-      this.icon});
+      this.icon,
+      this.titlePadding,
+      this.widthA = 100.0});
 
   @override
   Widget build(BuildContext context) {
@@ -83,14 +87,15 @@ class Header extends StatelessWidget {
                 ),
                 if (showBackArrow && onBackPressed != null)
                   Padding(
-                    padding: const EdgeInsets.only(top: 40, left: 39),
+                    padding: titlePadding ??
+                        const EdgeInsets.only(top: 40, left: 39),
                     child: Row(
                       children: [
                         BackArrowButton(
                           onPressed: onBackPressed!,
                           iconPath: backArrowColor!,
                         ),
-                        const SizedBox(width: 100),
+                        SizedBox(width: widthA),
                         Image.asset(
                           icon!,
                           width: 24,

@@ -1,5 +1,7 @@
+import 'package:carttrack/pages/CitasScreens/Citas_screen.dart';
+import 'package:carttrack/pages/CitasScreens/Solicitar_detail_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:carttrack/pages/CartTrackScreens/Dashboard_screen.dart';
+import 'package:carttrack/pages/MyAccountScreens/Dashboard_screen.dart';
 
 class Footer extends StatefulWidget {
   const Footer({super.key});
@@ -20,6 +22,10 @@ class _FooterState extends State<Footer> {
       case 0:
         Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => DashboardScreen()));
+        break;
+      case 1:
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => SolicitarDetailScreen()));
         break;
     }
   }

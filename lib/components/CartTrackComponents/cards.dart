@@ -40,22 +40,22 @@ class _CardsState extends State<Cards> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final cardWidth =
-        screenWidth * 0.85; // La card ocupará el 85% del ancho de la pantalla
+    final screenHeight = MediaQuery.of(context).size.height;
+    final cardWidth = screenWidth * 0.9;
+    final responsiveHeight = screenHeight * 0.15;
 
     return Center(
       child: Container(
-        margin: EdgeInsets.symmetric(
-            horizontal: screenWidth * 0.075), // Margen responsivo
+        margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
         child: SizedBox(
           width: cardWidth,
-          height: widget.height,
+          height: widget.height ?? responsiveHeight,
           child: Stack(
             clipBehavior: Clip.none,
             children: [
               // Extensión azul de edición
               Positioned(
-                right: -15,
+                right: 0,
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 500),
                   curve: Curves.easeOut,
@@ -113,7 +113,7 @@ class _CardsState extends State<Cards> {
                     child: Padding(
                       padding: EdgeInsets.symmetric(
                         horizontal: cardWidth * 0.07,
-                        vertical: widget.height! < 120 ? 12 : 24,
+                        vertical: screenHeight * 0.02,
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -124,16 +124,16 @@ class _CardsState extends State<Cards> {
                               if (widget.iconPath != null)
                                 Image.asset(
                                   widget.iconPath!,
-                                  width: cardWidth * 0.06,
-                                  height: cardWidth * 0.06,
+                                  width: screenWidth * 0.06,
+                                  height: screenWidth * 0.06,
                                 ),
-                              SizedBox(width: cardWidth * 0.04),
+                              SizedBox(width: screenWidth * 0.04),
                               Expanded(
                                 child: Text(
                                   widget.title,
                                   style: TextStyle(
                                     color: Color(0xFF0500C6),
-                                    fontSize: cardWidth * 0.05,
+                                    fontSize: screenWidth * 0.045,
                                     fontFamily: 'Mundial',
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -142,12 +142,12 @@ class _CardsState extends State<Cards> {
                             ],
                           ),
                           if (widget.description != null) ...[
-                            SizedBox(height: widget.height! < 120 ? 6 : 12),
+                            SizedBox(height: screenHeight * 0.015),
                             Text(
                               widget.description ?? '',
                               style: TextStyle(
                                 color: Color(0xFF6B7280),
-                                fontSize: cardWidth * 0.035,
+                                fontSize: screenWidth * 0.035,
                                 fontFamily: 'Mundial',
                               ),
                             ),
