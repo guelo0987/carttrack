@@ -87,17 +87,16 @@ class DashboardScreen extends StatelessWidget {
                 description: "Documentación de todos los sevicios.",
                 iconPath: "images/icons/historial.png",
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>HistorialScreen( )));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HistorialScreen()));
                 },
               ),
             ],
           ),
           const Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-              child: Footer(initialIndex: 0)
-          ),
+              bottom: 0, left: 0, right: 0, child: Footer(initialIndex: 0)),
         ],
       ),
     );

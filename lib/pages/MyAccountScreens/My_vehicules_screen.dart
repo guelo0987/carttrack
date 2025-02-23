@@ -5,7 +5,6 @@ import 'package:carttrack/components/CartTrackComponents/cards.dart';
 import 'package:carttrack/components/CartTrackComponents/footer.dart';
 
 class MyVehiculesScreen extends StatelessWidget {
-
   MyVehiculesScreen({super.key});
 
   @override
@@ -42,7 +41,10 @@ class MyVehiculesScreen extends StatelessWidget {
                 onTap: () => {},
                 showMenuIcon: true,
                 onEditTap: () => {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>VehicleDetailScreen()))
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => VehicleDetailScreen()))
                 },
                 height: 100,
               ),
@@ -51,9 +53,11 @@ class MyVehiculesScreen extends StatelessWidget {
                 title: "Tesla Model X 2023",
                 onTap: () => {},
                 showMenuIcon: true,
-                onEditTap: () =>
-                {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>VehicleDetailScreen()))
+                onEditTap: () => {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => VehicleDetailScreen()))
                 },
                 height: 100,
               ),
@@ -62,11 +66,7 @@ class MyVehiculesScreen extends StatelessWidget {
             ],
           ),
           Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-              child: Footer(initialIndex: 0)
-          ),
+              bottom: 0, left: 0, right: 0, child: Footer(initialIndex: 0)),
         ],
       ),
     );

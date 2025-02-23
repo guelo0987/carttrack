@@ -12,7 +12,7 @@ class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:  Color(0xFFEBF5FC),
+      backgroundColor: Color(0xFFEBF5FC),
       body: Stack(
         children: [
           Column(
@@ -37,7 +37,8 @@ class AccountScreen extends StatelessWidget {
                 onTap: () => {},
                 showMenuIcon: true,
                 onEditTap: () => {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>PersonalData()))
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => PersonalData()))
                 },
               ),
               SizedBox(height: 16),
@@ -46,7 +47,10 @@ class AccountScreen extends StatelessWidget {
                 description: "Información de tus vehículos.",
                 showMenuIcon: true,
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>MyVehiculesScreen()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MyVehiculesScreen()));
                 },
               ),
               SizedBox(height: 16),
@@ -55,17 +59,16 @@ class AccountScreen extends StatelessWidget {
                 description: "Información de contacto y documentos.",
                 showMenuIcon: true,
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>MembresiaScreen()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MembresiaScreen()));
                 },
               ),
             ],
           ),
           const Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-              child: Footer(initialIndex: 0)
-          ),
+              bottom: 0, left: 0, right: 0, child: Footer(initialIndex: 0)),
         ],
       ),
     );
