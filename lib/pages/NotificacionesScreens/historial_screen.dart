@@ -86,6 +86,7 @@ class HistorialScreen extends StatelessWidget {
               ),
               Expanded(
                 child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -126,7 +127,9 @@ class HistorialScreen extends StatelessWidget {
             bottom: 0,
             left: 0,
             right: 0,
-            child: Footer(initialIndex: 3,),
+            child: Footer(
+              initialIndex: 3,
+            ),
           ),
         ],
       ),

@@ -126,6 +126,7 @@ class NotificacionesScreen extends StatelessWidget {
               ),
               Expanded(
                 child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
                   child: Column(
                     children: [
                       SizedBox(height: 54),
@@ -161,11 +162,12 @@ class NotificacionesScreen extends StatelessWidget {
             ],
           ),
           Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Footer(initialIndex: 4,)
-          ),
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Footer(
+                initialIndex: 4,
+              )),
         ],
       ),
     );

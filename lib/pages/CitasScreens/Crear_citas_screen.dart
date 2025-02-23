@@ -29,7 +29,7 @@ class CrearCitasScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(height: 350),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.4),
                     MainButton(
                       text: 'Crear Cita',
                       onPressed: () {
@@ -52,7 +52,7 @@ class CrearCitasScreen extends StatelessWidget {
             bottom: 0,
             left: 0,
             right: 0,
-              child: Footer(initialIndex: 1),
+            child: Footer(initialIndex: 1),
           )
         ],
       ),

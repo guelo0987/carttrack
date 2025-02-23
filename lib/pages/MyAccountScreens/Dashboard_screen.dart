@@ -1,5 +1,6 @@
 import 'package:carttrack/pages/CitasScreens/Citas_screen.dart';
 import 'package:carttrack/pages/MyAccountScreens/Account_screen.dart';
+import 'package:carttrack/pages/NotificacionesScreens/historial_screen.dart';
 import 'package:flutter/material.dart';
 import '../../components/CartTrackComponents/header.dart';
 import '../../components/CartTrackComponents/footer.dart';
@@ -85,7 +86,9 @@ class DashboardScreen extends StatelessWidget {
                 title: "Historial",
                 description: "Documentación de todos los sevicios.",
                 iconPath: "images/icons/historial.png",
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>HistorialScreen( )));
+                },
               ),
             ],
           ),

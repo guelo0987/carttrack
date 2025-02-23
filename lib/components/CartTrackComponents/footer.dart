@@ -67,21 +67,24 @@ class _FooterState extends State<Footer> {
 
   Widget _buildIcon(String iconPath, int index) {
     bool isSelected = _selectedIndex == index;
+    final iconSize =
+        MediaQuery.of(context).size.width * 0.06; // Tamaño responsivo
 
     return GestureDetector(
       onTap: () => _onItemTapped(index),
       child: Container(
-        width: 38,
-        height: 38,
+        width: iconSize * 1.6, // Antes era width: 38
+        height: iconSize * 1.6, // Antes era height: 38
         decoration: BoxDecoration(
           color: isSelected ? const Color(0xFF0500C6) : Colors.transparent,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(iconSize * 0.4),
         ),
         child: Center(
           child: Image.asset(
             iconPath,
-            width: isSelected ? 18 : 24,
-            height: isSelected ? 18 : 24,
+            width: isSelected ? iconSize * 0.75 : iconSize, // Antes era 18 : 24
+            height:
+                isSelected ? iconSize * 0.75 : iconSize, // Antes era 18 : 24
             color: isSelected ? Colors.white : null,
           ),
         ),
@@ -92,8 +95,8 @@ class _FooterState extends State<Footer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 375,
-      height: 59,
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height * 0.08,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
