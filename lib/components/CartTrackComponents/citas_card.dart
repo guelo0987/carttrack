@@ -17,11 +17,11 @@ class ReparacionCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 159,
+        width: MediaQuery.of(context).size.width * 0.4,
         height: 138,
         padding: const EdgeInsets.symmetric(
           vertical: 30,
-          horizontal: 20,
+          horizontal: 10,
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),

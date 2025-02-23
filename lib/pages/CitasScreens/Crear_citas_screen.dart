@@ -25,16 +25,26 @@ class CrearCitasScreen extends StatelessWidget {
                 icon: 'images/icons/citas_header.png',
                 widthA: 190.0,
               ),
-              SizedBox(height: 580),
-              MainButton(
-                text: 'Crear Cita',
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ProgramarCitaScreen()));
-                },
-                backgroundColor: const Color(0xFF0500C6),
-                textColor: Colors.white,
-                height: 80,
-                margin: EdgeInsets.zero,
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 350),
+                    MainButton(
+                      text: 'Crear Cita',
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProgramarCitaScreen()));
+                      },
+                      backgroundColor: const Color(0xFF0500C6),
+                      textColor: Colors.white,
+                      height: 80,
+                      margin: EdgeInsets.zero,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -42,7 +52,7 @@ class CrearCitasScreen extends StatelessWidget {
             bottom: 0,
             left: 0,
             right: 0,
-            child: Footer( ),
+              child: Footer(initialIndex: 1),
           )
         ],
       ),

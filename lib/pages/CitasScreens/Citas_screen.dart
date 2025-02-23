@@ -212,7 +212,7 @@ class _CitasScreenState extends State<CitasScreen> {
             bottom: 0,
             left: 0,
             right: 0,
-            child: Footer(),
+            child: Footer(initialIndex: 1),
           ),
         ],
       ),

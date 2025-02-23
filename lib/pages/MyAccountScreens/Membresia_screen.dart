@@ -170,7 +170,7 @@ class MembresiaScreen extends StatelessWidget {
             right: 0,
             child: Container(
               color: Color(0xFFEBF5FC),
-              child: const Footer(),
+                child: Footer(initialIndex: 0)
             ),
           ),
         ],

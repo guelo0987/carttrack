@@ -1,33 +1,67 @@
 import 'package:carttrack/pages/CitasScreens/Citas_screen.dart';
 import 'package:carttrack/pages/CitasScreens/Crear_citas_screen.dart';
 import 'package:carttrack/pages/CitasScreens/Solicitar_detail_screen.dart';
+import 'package:carttrack/pages/NotificacionesScreens/historial_screen.dart';
+import 'package:carttrack/pages/NotificacionesScreens/notificaciones_screens.dart';
+import 'package:carttrack/pages/NotificacionesScreens/notification2_detail2.dart';
 import 'package:flutter/material.dart';
 import 'package:carttrack/pages/MyAccountScreens/Dashboard_screen.dart';
 
 class Footer extends StatefulWidget {
-  const Footer({super.key});
+  final int? initialIndex; // Nuevo parámetro para el índice inicial
+
+  const Footer({
+    super.key,
+    this.initialIndex,
+  });
 
   @override
   State<Footer> createState() => _FooterState();
 }
 
 class _FooterState extends State<Footer> {
-  int _selectedIndex = 0;
+  late int _selectedIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedIndex =
+        widget.initialIndex ?? 0; // Inicializar con el índice proporcionado
+  }
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    if (_selectedIndex != index) {
+      // Solo navegar si es un ítem diferente
+      setState(() {
+        _selectedIndex = index;
+      });
 
-    switch (index) {
-      case 0:
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => DashboardScreen()));
-        break;
-      case 1:
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => CrearCitasScreen()));
-        break;
+      switch (index) {
+        case 0:
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => DashboardScreen()),
+          );
+          break;
+        case 1:
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => CrearCitasScreen()),
+          );
+          break;
+        case 3:
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => HistorialScreen()),
+          );
+          break;
+        case 4:
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => NotificacionesScreen()),
+          );
+          break;
+      }
     }
   }
 

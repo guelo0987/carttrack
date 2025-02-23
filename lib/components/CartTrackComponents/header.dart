@@ -85,36 +85,39 @@ class Header extends StatelessWidget {
                     ],
                   ),
                 ),
-                if (showBackArrow && onBackPressed != null)
-                  Padding(
-                    padding: titlePadding ??
-                        const EdgeInsets.only(top: 40, left: 39),
-                    child: Row(
-                      children: [
+                Padding(
+                  padding:
+                      titlePadding ?? const EdgeInsets.only(top: 40, left: 39),
+                  child: Row(
+                    children: [
+                      if (showBackArrow && onBackPressed != null) ...[
                         BackArrowButton(
                           onPressed: onBackPressed!,
                           iconPath: backArrowColor!,
                         ),
                         SizedBox(width: widthA),
+                      ] else
+                        SizedBox(width: widthA),
+                      if (icon != null)
                         Image.asset(
                           icon!,
                           width: 24,
                           height: 24,
                         ),
-                        const SizedBox(width: 8),
-                        if (title != null)
-                          Text(
-                            title!,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 32,
-                              fontFamily: 'Mundial',
-                              fontWeight: FontWeight.bold,
-                            ),
+                      const SizedBox(width: 8),
+                      if (title != null)
+                        Text(
+                          title!,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 32,
+                            fontFamily: 'Mundial',
+                            fontWeight: FontWeight.bold,
                           ),
-                      ],
-                    ),
+                        ),
+                    ],
                   ),
+                ),
               ],
             ),
           ],

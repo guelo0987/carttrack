@@ -71,7 +71,7 @@ class SolicitarDetailScreen extends StatelessWidget {
                 backArrowColor: 'images/icons/left_arrow_white.png',
                 title: 'Citas',
                 icon: 'images/icons/citas_header.png',
-                widthA: 190.0,
+                widthA: 90.0,
               ),
               SizedBox(height: 54),
               Padding(
@@ -110,7 +110,7 @@ class SolicitarDetailScreen extends StatelessWidget {
             bottom: 0,
             left: 0,
             right: 0,
-            child: Footer(),
+              child: Footer(initialIndex: 1),
           )
         ],
       ),

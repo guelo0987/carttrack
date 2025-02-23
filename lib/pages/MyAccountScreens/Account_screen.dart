@@ -64,7 +64,7 @@ class AccountScreen extends StatelessWidget {
             bottom: 0,
             left: 0,
             right: 0,
-            child: Footer(),
+              child: Footer(initialIndex: 0)
           ),
         ],
       ),

@@ -89,7 +89,7 @@ class _PersonalDataState extends State<PersonalData> {
             bottom: 0,
             left: 0,
             right: 0,
-            child: Footer(),
+              child: Footer(initialIndex: 0)
           ),
         ],
       ),

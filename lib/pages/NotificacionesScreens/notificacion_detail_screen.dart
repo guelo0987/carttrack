@@ -1,13 +1,20 @@
+import 'package:carttrack/pages/NotificacionesScreens/notification2_detail2.dart';
 import 'package:flutter/material.dart';
 import 'package:carttrack/components/CartTrackComponents/header.dart';
 import 'package:carttrack/components/CartTrackComponents/footer.dart';
 import 'package:carttrack/components/CartTrackComponents/data_card.dart';
 import 'package:carttrack/components/main_button.dart';
 
-class Notification2Detail2 extends StatelessWidget {
+class NotificacionDetailScreen extends StatelessWidget {
+  final String title;
+  final String? details;
+  final String timestamp;
 
-  const Notification2Detail2({
-    super.key
+  const NotificacionDetailScreen({
+    super.key,
+    required this.title,
+    this.details,
+    required this.timestamp,
   });
 
   Widget _buildInfoRow(String label, String value) {
@@ -64,9 +71,9 @@ class Notification2Detail2 extends StatelessWidget {
                 backArrowColor: 'images/icons/left_arrow_white.png',
                 title: 'Notificación',
                 icon: 'images/icons/notificaciones_header.png',
-                widthA: 80.0,
+                widthA: 90.0,
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 24),
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
@@ -78,7 +85,7 @@ class Notification2Detail2 extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Su solicitud de memebresía  ha sido denegada.",
+                                title,
                                 style: TextStyle(
                                   color: Color(0xFF0500C6),
                                   fontSize: 22,
@@ -87,11 +94,16 @@ class Notification2Detail2 extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: 32),
+                              _buildInfoRow("Tipo de Cita", "Mantenimiento"),
+                              _buildInfoRow("Fecha", "18-08-2024"),
+                              _buildInfoRow("Hora", "11:30 AM"),
+                              _buildInfoRow("Vehículo", "Tesla Model X 2023"),
+                              _buildInfoRow("Taller", "Nombre del taller"),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "Lorem ipsum dolor sit amet consectetur. Dictum nam semper nibh ipsum mauris leo est at massa. Et nullam tristique dignissim sagittis. ",
+                                    "Ave. John F. Kennedy 123",
                                     style: TextStyle(
                                       color: Color(0xFF1E1E1E),
                                       fontSize: 16,
@@ -121,11 +133,11 @@ class Notification2Detail2 extends StatelessWidget {
                                 child: Container(
                                   width: double.infinity,
                                   child: MainButton(
-                                    text: "Solicitar nuevamente",
+                                    text: "Solicitar Modificación",
                                     backgroundColor: Colors.white,
                                     textColor: Color(0xFF0500C6),
                                     onPressed: () {
-                                      // Lógica para solicitar modificación
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Notification2Detail2()));
                                     },
                                     borderColor: Color(0xFF0500C6),
                                     icon: Image.asset(
@@ -143,7 +155,7 @@ class Notification2Detail2 extends StatelessWidget {
                       ),
                       SizedBox(
                           height:
-                          100), // Espacio para el Footer fuera de la card
+                              100), // Espacio para el Footer fuera de la card
                     ],
                   ),
                 ),

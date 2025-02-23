@@ -128,54 +128,62 @@ class _ProgramarCitaScreenState extends State<ProgramarCitaScreen> {
                 ),
                 SizedBox(height: 14),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40),
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Primera columna
-                      Column(
-                        children: [
-                          ReparacionCard(
-                            textCard: 'Mantenimiento',
-                            isSelected: selectedCardIndex == 0,
-                            onTap: () => setState(() => selectedCardIndex = 0),
-                          ),
-                          SizedBox(height: 16),
-                          ReparacionCard(
-                            textCard: 'Aire\nAcondicionado',
-                            isSelected: selectedCardIndex == 1,
-                            onTap: () => setState(() => selectedCardIndex = 1),
-                          ),
-                          SizedBox(height: 16),
-                          ReparacionCard(
-                            textCard: 'Revisión\nEléctrica',
-                            isSelected: selectedCardIndex == 2,
-                            onTap: () => setState(() => selectedCardIndex = 2),
-                          ),
-                        ],
+                      Expanded(
+                        child: Column(
+                          children: [
+                            ReparacionCard(
+                              textCard: 'Mantenimiento',
+                              isSelected: selectedCardIndex == 0,
+                              onTap: () =>
+                                  setState(() => selectedCardIndex = 0),
+                            ),
+                            SizedBox(height: 16),
+                            ReparacionCard(
+                              textCard: 'Aire\nAcondicionado',
+                              isSelected: selectedCardIndex == 1,
+                              onTap: () =>
+                                  setState(() => selectedCardIndex = 1),
+                            ),
+                            SizedBox(height: 16),
+                            ReparacionCard(
+                              textCard: 'Revisión\nEléctrica',
+                              isSelected: selectedCardIndex == 2,
+                              onTap: () =>
+                                  setState(() => selectedCardIndex = 2),
+                            ),
+                          ],
+                        ),
                       ),
-                      SizedBox(width: 16),
-                      // Segunda columna
-                      Column(
-                        children: [
-                          ReparacionCard(
-                            textCard: 'Reparación',
-                            isSelected: selectedCardIndex == 3,
-                            onTap: () => setState(() => selectedCardIndex = 3),
-                          ),
-                          SizedBox(height: 16),
-                          ReparacionCard(
-                            textCard: 'Frenos',
-                            isSelected: selectedCardIndex == 4,
-                            onTap: () => setState(() => selectedCardIndex = 4),
-                          ),
-                          SizedBox(height: 16),
-                          ReparacionCard(
-                            textCard: 'Revisión\nGeneral',
-                            isSelected: selectedCardIndex == 5,
-                            onTap: () => setState(() => selectedCardIndex = 5),
-                          ),
-                        ],
+                      SizedBox(width: 8),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            ReparacionCard(
+                              textCard: 'Reparación',
+                              isSelected: selectedCardIndex == 3,
+                              onTap: () =>
+                                  setState(() => selectedCardIndex = 3),
+                            ),
+                            SizedBox(height: 16),
+                            ReparacionCard(
+                              textCard: 'Frenos',
+                              isSelected: selectedCardIndex == 4,
+                              onTap: () =>
+                                  setState(() => selectedCardIndex = 4),
+                            ),
+                            SizedBox(height: 16),
+                            ReparacionCard(
+                              textCard: 'Revisión\nGeneral',
+                              isSelected: selectedCardIndex == 5,
+                              onTap: () =>
+                                  setState(() => selectedCardIndex = 5),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -332,7 +340,7 @@ class _ProgramarCitaScreenState extends State<ProgramarCitaScreen> {
             bottom: 0,
             left: 0,
             right: 0,
-            child: Footer(),
+              child: Footer(initialIndex: 1),
           )
         ],
       ),
