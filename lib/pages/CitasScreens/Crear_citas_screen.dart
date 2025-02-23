@@ -9,6 +9,8 @@ class CrearCitasScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: Color(0xFFEBF5FC),
       body: Stack(
@@ -26,34 +28,43 @@ class CrearCitasScreen extends StatelessWidget {
                 widthA: 190.0,
               ),
               Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.4),
-                    MainButton(
-                      text: 'Crear Cita',
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ProgramarCitaScreen()));
-                      },
-                      backgroundColor: const Color(0xFF0500C6),
-                      textColor: Colors.white,
-                      height: 80,
-                      margin: EdgeInsets.zero,
-                    ),
-                  ],
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(height: screenHeight * 0.4),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: MainButton(
+                          text: 'Crear Cita',
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        ProgramarCitaScreen()));
+                          },
+                          backgroundColor: const Color(0xFF0500C6),
+                          textColor: Colors.white,
+                          height: 80,
+                          margin: EdgeInsets.zero,
+                        ),
+                      ),
+                      SizedBox(
+                          height: screenHeight * 0.1), // Espacio para el footer
+                    ],
+                  ),
                 ),
               ),
             ],
           ),
-          Positioned(
+          const Positioned(
             bottom: 0,
             left: 0,
             right: 0,
             child: Footer(initialIndex: 1),
-          )
+          ),
         ],
       ),
     );

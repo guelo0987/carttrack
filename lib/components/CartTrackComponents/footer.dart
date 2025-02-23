@@ -65,43 +65,20 @@ class _FooterState extends State<Footer> {
     }
   }
 
-  Widget _buildIcon(String iconPath, int index) {
-    bool isSelected = _selectedIndex == index;
-    final iconSize =
-        MediaQuery.of(context).size.width * 0.06; // Tamaño responsivo
-
-    return GestureDetector(
-      onTap: () => _onItemTapped(index),
-      child: Container(
-        width: iconSize * 1.6, // Antes era width: 38
-        height: iconSize * 1.6, // Antes era height: 38
-        decoration: BoxDecoration(
-          color: isSelected ? const Color(0xFF0500C6) : Colors.transparent,
-          borderRadius: BorderRadius.circular(iconSize * 0.4),
-        ),
-        child: Center(
-          child: Image.asset(
-            iconPath,
-            width: isSelected ? iconSize * 0.75 : iconSize, // Antes era 18 : 24
-            height:
-                isSelected ? iconSize * 0.75 : iconSize, // Antes era 18 : 24
-            color: isSelected ? Colors.white : null,
-          ),
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final footerHeight = screenHeight * 0.07; // Reducido de 0.08
+
     return Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height * 0.08,
+      width: screenWidth,
+      height: footerHeight,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
+          topLeft: Radius.circular(20), // Reducido de 30
+          topRight: Radius.circular(20),
         ),
       ),
       child: Row(
@@ -113,6 +90,33 @@ class _FooterState extends State<Footer> {
           _buildIcon('images/icons/mantenimiento_footer.png', 3),
           _buildIcon('images/icons/notificaciones_footer.png', 4),
         ],
+      ),
+    );
+  }
+
+  Widget _buildIcon(String iconPath, int index) {
+    bool isSelected = _selectedIndex == index;
+    final iconSize =
+        MediaQuery.of(context).size.width * 0.05; // Reducido de 0.06
+
+    return GestureDetector(
+      onTap: () => _onItemTapped(index),
+      child: Container(
+        width: iconSize * 1.4, // Reducido de 1.6
+        height: iconSize * 1.4,
+        decoration: BoxDecoration(
+          color: isSelected ? const Color(0xFF0500C6) : Colors.transparent,
+          borderRadius:
+              BorderRadius.circular(iconSize * 0.3), // Reducido de 0.4
+        ),
+        child: Center(
+          child: Image.asset(
+            iconPath,
+            width: isSelected ? iconSize * 0.7 : iconSize * 0.9, // Ajustado
+            height: isSelected ? iconSize * 0.7 : iconSize * 0.9,
+            color: isSelected ? Colors.white : null,
+          ),
+        ),
       ),
     );
   }

@@ -41,12 +41,12 @@ class _CardsState extends State<Cards> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    final cardWidth = screenWidth * 0.9;
-    final responsiveHeight = screenHeight * 0.15;
+    final cardWidth = screenWidth * 0.85;
+    final responsiveHeight = screenHeight * 0.12;
 
     return Center(
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+        margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
         child: SizedBox(
           width: cardWidth,
           height: widget.height ?? responsiveHeight,
@@ -112,8 +112,8 @@ class _CardsState extends State<Cards> {
                     ),
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                        horizontal: cardWidth * 0.07,
-                        vertical: screenHeight * 0.02,
+                        horizontal: cardWidth * 0.05,
+                        vertical: screenHeight * 0.015,
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -124,16 +124,16 @@ class _CardsState extends State<Cards> {
                               if (widget.iconPath != null)
                                 Image.asset(
                                   widget.iconPath!,
-                                  width: screenWidth * 0.06,
-                                  height: screenWidth * 0.06,
+                                  width: screenWidth * 0.05,
+                                  height: screenWidth * 0.05,
                                 ),
-                              SizedBox(width: screenWidth * 0.04),
+                              SizedBox(width: screenWidth * 0.03),
                               Expanded(
                                 child: Text(
                                   widget.title,
                                   style: TextStyle(
                                     color: Color(0xFF0500C6),
-                                    fontSize: screenWidth * 0.045,
+                                    fontSize: screenWidth * 0.04,
                                     fontFamily: 'Mundial',
                                     fontWeight: FontWeight.bold,
                                   ),

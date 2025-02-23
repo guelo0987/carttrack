@@ -82,7 +82,7 @@ class HistorialScreen extends StatelessWidget {
                 backArrowColor: 'images/icons/left_arrow_white.png',
                 title: 'Historial',
                 icon: 'images/icons/notificaciones_header.png',
-                widthA: 90.0,
+                widthA: 190.0,
               ),
               Expanded(
                 child: SingleChildScrollView(

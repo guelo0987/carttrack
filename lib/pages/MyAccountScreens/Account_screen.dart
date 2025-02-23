@@ -11,64 +11,93 @@ class AccountScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: Color(0xFFEBF5FC),
       body: Stack(
         children: [
           Column(
             children: [
-              Stack(
-                children: [
-                  Header(
-                    height: 217,
-                    opacity: 0.2,
-                    showBackArrow: true,
-                    onBackPressed: () => Navigator.pop(context),
-                    backArrowColor: 'images/icons/left_arrow_white.png',
-                    title: 'Mi cuenta',
-                    icon: 'images/icons/account_user_header.png',
+              Header(
+                height: 217, // Altura responsiva del header
+                opacity: 0.2,
+                showBackArrow: true,
+                onBackPressed: () => Navigator.pop(context),
+                backArrowColor: 'images/icons/left_arrow_white.png',
+                title: 'Mi cuenta',
+                icon: 'images/icons/account_user_header.png',
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: screenHeight * 0.02,
+                    ),
+                    child: Column(
+                      children: [
+                        SizedBox(height: screenHeight * 0.02),
+                        Cards(
+                          title: "Datos Personales",
+                          description: "Información de contacto y documentos",
+                          onTap: () => {},
+                          showMenuIcon: true,
+                          onEditTap: () => {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PersonalData(),
+                              ),
+                            )
+                          },
+                        ),
+                        SizedBox(height: screenHeight * 0.02),
+                        Cards(
+                          title: "Mis Vehículos",
+                          description: "Información de tus vehículos",
+                          onTap: () => {},
+                          showMenuIcon: true,
+                          onEditTap: () => {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MyVehiculesScreen(),
+                              ),
+                            )
+                          },
+                        ),
+                        SizedBox(height: screenHeight * 0.02),
+                        Cards(
+                          title: "Membresía",
+                          description: "Información de tu membresía",
+                          onTap: () => {},
+                          showMenuIcon: true,
+                          onEditTap: () => {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MembresiaScreen(),
+                              ),
+                            )
+                          },
+                        ),
+                        SizedBox(
+                            height:
+                                screenHeight * 0.1), // Espacio para el footer
+                      ],
+                    ),
                   ),
-                ],
-              ),
-              SizedBox(height: 30),
-              Cards(
-                title: "Datos Personales",
-                description: "Información de contacto y documentos",
-                onTap: () => {},
-                showMenuIcon: true,
-                onEditTap: () => {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => PersonalData()))
-                },
-              ),
-              SizedBox(height: 16),
-              Cards(
-                title: "Vehículos Registrados",
-                description: "Información de tus vehículos.",
-                showMenuIcon: true,
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MyVehiculesScreen()));
-                },
-              ),
-              SizedBox(height: 16),
-              Cards(
-                title: "Membresía CarTrack",
-                description: "Información de contacto y documentos.",
-                showMenuIcon: true,
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MembresiaScreen()));
-                },
+                ),
               ),
             ],
           ),
           const Positioned(
-              bottom: 0, left: 0, right: 0, child: Footer(initialIndex: 0)),
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Footer(initialIndex: 0),
+          ),
         ],
       ),
     );

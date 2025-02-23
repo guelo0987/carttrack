@@ -71,7 +71,7 @@ class NotificacionDetailScreen extends StatelessWidget {
                 backArrowColor: 'images/icons/left_arrow_white.png',
                 title: 'Notificación',
                 icon: 'images/icons/notificaciones_header.png',
-                widthA: 90.0,
+                widthA: 130.0,
               ),
               SizedBox(height: 24),
               Expanded(

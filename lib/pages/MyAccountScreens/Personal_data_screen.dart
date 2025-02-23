@@ -13,6 +13,8 @@ class PersonalData extends StatefulWidget {
 class _PersonalDataState extends State<PersonalData> {
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: const Color(0xFFEBF5FC),
       body: Stack(
@@ -20,7 +22,7 @@ class _PersonalDataState extends State<PersonalData> {
           Column(
             children: [
               Header(
-                height: 217,
+                height: 217, // Altura responsiva
                 opacity: 0.2,
                 showBackArrow: true,
                 onBackPressed: () => Navigator.pop(context),
@@ -28,58 +30,74 @@ class _PersonalDataState extends State<PersonalData> {
                 title: 'Mi cuenta',
                 icon: 'images/icons/account_user_header.png',
               ),
-              const SizedBox(height: 30),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: BaseCard(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text(
-                            "Datos Personales",
-                            style: TextStyle(
-                              color: Color(0xFF0500C6),
-                              fontSize: 20,
-                              fontFamily: 'Mundial',
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              // Manejar la edición aquí
-                            },
-                            child: Image.asset(
-                              'images/icons/edit_icon.png',
-                              width: 19,
-                              height: 19,
-                              color: const Color(0xFF0500C6),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 16),
-                      Container(
-                        width: 250,
-                        height: 2,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: const Color(0xFF1D1A7C).withAlpha(26),
-                            width: 2,
+              Expanded(
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: screenHeight * 0.02,
+                    ),
+                    child: Column(
+                      children: [
+                        BaseCard(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text(
+                                    "Datos Personales",
+                                    style: TextStyle(
+                                      color: Color(0xFF0500C6),
+                                      fontSize: 20,
+                                      fontFamily: 'Mundial',
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      // Manejar la edición aquí
+                                    },
+                                    child: Image.asset(
+                                      'images/icons/edit_icon.png',
+                                      width: 19,
+                                      height: 19,
+                                      color: const Color(0xFF0500C6),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: screenHeight * 0.02),
+                              Container(
+                                width: 250,
+                                height: 2,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color:
+                                        const Color(0xFF1D1A7C).withAlpha(26),
+                                    width: 2,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: screenHeight * 0.03),
+                              _buildDataRow("Nombre:", "Rafael Rivas"),
+                              _buildDataRow("Correo:", "example@example.com"),
+                              _buildDataRow("Teléfono:", "(829) 123-1234"),
+                              _buildDataRow("Dirección:",
+                                  "Ave. José Contreras 45,\nDistrito Nacional"),
+                              _buildDataRow("Cédula:", "Archivo cargado",
+                                  showIcons: true),
+                            ],
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 24),
-                      _buildDataRow("Nombre:", "Rafael Rivas"),
-                      _buildDataRow("Correo:", "example@example.com"),
-                      _buildDataRow("Teléfono:", "(829) 123-1234"),
-                      _buildDataRow("Dirección:",
-                          "Ave. José Contreras 45,\nDistrito Nacional"),
-                      _buildDataRow("Cédula:", "Archivo cargado",
-                          showIcons: true),
-                    ],
+                        SizedBox(
+                            height:
+                                screenHeight * 0.1), // Espacio para el footer
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -89,7 +107,7 @@ class _PersonalDataState extends State<PersonalData> {
             bottom: 0,
             left: 0,
             right: 0,
-              child: Footer(initialIndex: 0)
+            child: Footer(initialIndex: 0),
           ),
         ],
       ),

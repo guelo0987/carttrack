@@ -86,8 +86,8 @@ class Header extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding:
-                      titlePadding ?? const EdgeInsets.only(top: 40, left: 39),
+                  padding: titlePadding ??
+                      const EdgeInsets.only(top: 40, left: 20, right: 20),
                   child: Row(
                     children: [
                       if (showBackArrow && onBackPressed != null) ...[
@@ -95,24 +95,26 @@ class Header extends StatelessWidget {
                           onPressed: onBackPressed!,
                           iconPath: backArrowColor!,
                         ),
-                        SizedBox(width: widthA),
-                      ] else
-                        SizedBox(width: widthA),
+                        SizedBox(width: widthA ?? 20),
+                      ],
                       if (icon != null)
                         Image.asset(
                           icon!,
-                          width: 24,
-                          height: 24,
+                          width: 20,
+                          height: 20,
                         ),
                       const SizedBox(width: 8),
                       if (title != null)
-                        Text(
-                          title!,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 32,
-                            fontFamily: 'Mundial',
-                            fontWeight: FontWeight.bold,
+                        Expanded(
+                          child: Text(
+                            title!,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 28,
+                              fontFamily: 'Mundial',
+                              fontWeight: FontWeight.bold,
+                            ),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                     ],

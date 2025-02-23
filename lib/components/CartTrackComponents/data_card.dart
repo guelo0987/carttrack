@@ -16,12 +16,11 @@ class BaseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    final responsiveHeight =
-        screenHeight * 0.15; // 15% de la altura de la pantalla
+    final responsiveHeight = screenHeight * 0.12; // Reducido de 0.15 a 0.12
 
     return Center(
       child: Container(
-        width: width ?? screenWidth * 0.9, // 90% del ancho de la pantalla
+        width: width ?? screenWidth * 0.9,
         constraints: BoxConstraints(minHeight: responsiveHeight),
         decoration: BoxDecoration(
           gradient: const LinearGradient(
@@ -35,24 +34,25 @@ class BaseCard extends StatelessWidget {
             transform: GradientRotation(238.44 * 3.14159 / 180),
           ),
           borderRadius:
-              BorderRadius.circular(screenWidth * 0.05), // Radio responsivo
+              BorderRadius.circular(screenWidth * 0.04), // Reducido de 0.05
           boxShadow: [
             BoxShadow(
               color: Color(0xFFC8DCEA),
-              offset: Offset(0, screenHeight * 0.03), // Sombra responsiva
-              blurRadius: screenWidth * 0.08,
+              offset: Offset(0, screenHeight * 0.02), // Reducido de 0.03
+              blurRadius: screenWidth * 0.06, // Reducido de 0.08
             ),
           ],
         ),
         child: Stack(
           children: [
             Padding(
-              padding: padding ?? EdgeInsets.all(screenWidth * 0.06),
+              padding: padding ??
+                  EdgeInsets.all(screenWidth * 0.04), // Reducido de 0.06
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   child,
-                  SizedBox(height: screenHeight * 0.02),
+                  SizedBox(height: screenHeight * 0.01), // Reducido de 0.02
                 ],
               ),
             ),
