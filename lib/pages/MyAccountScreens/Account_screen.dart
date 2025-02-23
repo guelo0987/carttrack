@@ -28,6 +28,7 @@ class AccountScreen extends StatelessWidget {
                 title: 'Mi cuenta',
                 icon: 'images/icons/account_user_header.png',
               ),
+              SizedBox(height: 30),
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
@@ -56,9 +57,7 @@ class AccountScreen extends StatelessWidget {
                         Cards(
                           title: "Mis Vehículos",
                           description: "Información de tus vehículos",
-                          onTap: () => {},
-                          showMenuIcon: true,
-                          onEditTap: () => {
+                          onTap: () => {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -66,14 +65,14 @@ class AccountScreen extends StatelessWidget {
                               ),
                             )
                           },
+                          showMenuIcon: true,
+
                         ),
                         SizedBox(height: screenHeight * 0.02),
                         Cards(
                           title: "Membresía",
                           description: "Información de tu membresía",
-                          onTap: () => {},
-                          showMenuIcon: true,
-                          onEditTap: () => {
+                          onTap: () => {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -81,6 +80,7 @@ class AccountScreen extends StatelessWidget {
                               ),
                             )
                           },
+                          showMenuIcon: true
                         ),
                         SizedBox(
                             height:

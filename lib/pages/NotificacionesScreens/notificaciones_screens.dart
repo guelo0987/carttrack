@@ -122,7 +122,7 @@ class NotificacionesScreen extends StatelessWidget {
                 showBackArrow: false,
                 title: 'Notificaciones',
                 icon: 'images/icons/notificaciones_header.png',
-                widthA: 80.0,
+                widthA: 130.0,
               ),
               Expanded(
                 child: SingleChildScrollView(

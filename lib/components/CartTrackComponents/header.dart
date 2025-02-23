@@ -96,7 +96,8 @@ class Header extends StatelessWidget {
                           iconPath: backArrowColor!,
                         ),
                         SizedBox(width: widthA ?? 20),
-                      ],
+                      ]else
+                        SizedBox(width: widthA),
                       if (icon != null)
                         Image.asset(
                           icon!,

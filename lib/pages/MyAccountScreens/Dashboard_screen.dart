@@ -32,16 +32,15 @@ class DashboardScreen extends StatelessWidget {
                             bottom: 18,
                             child: Padding(
                               padding:
-                                  const EdgeInsets.symmetric(horizontal: 16),
+                                  const EdgeInsets.only(left: 120, right: 40),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Image.asset(
                                     'images/icons/UserDashboard.png',
                                     width: 64,
                                     height: 64,
                                   ),
-                                  const SizedBox(width: 12),
+                                  const SizedBox(width: 20),
                                   Expanded(
                                     child: Column(
                                       crossAxisAlignment:
@@ -74,6 +73,7 @@ class DashboardScreen extends StatelessWidget {
                           ),
                         ],
                       ),
+                      SizedBox(height: 37),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Column(

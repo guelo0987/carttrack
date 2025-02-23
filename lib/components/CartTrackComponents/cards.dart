@@ -116,6 +116,7 @@ class _CardsState extends State<Cards> {
                         vertical: screenHeight * 0.015,
                       ),
                       child: Column(
+                        mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -124,16 +125,16 @@ class _CardsState extends State<Cards> {
                               if (widget.iconPath != null)
                                 Image.asset(
                                   widget.iconPath!,
-                                  width: screenWidth * 0.05,
-                                  height: screenWidth * 0.05,
+                                  width: screenWidth * 0.04,
+                                  height: screenWidth * 0.04,
                                 ),
-                              SizedBox(width: screenWidth * 0.03),
+                              SizedBox(width: screenWidth * 0.02),
                               Expanded(
                                 child: Text(
                                   widget.title,
                                   style: TextStyle(
                                     color: Color(0xFF0500C6),
-                                    fontSize: screenWidth * 0.04,
+                                    fontSize: screenWidth * 0.035,
                                     fontFamily: 'Mundial',
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -142,12 +143,12 @@ class _CardsState extends State<Cards> {
                             ],
                           ),
                           if (widget.description != null) ...[
-                            SizedBox(height: screenHeight * 0.015),
+                            SizedBox(height: screenHeight * 0.01),
                             Text(
                               widget.description ?? '',
                               style: TextStyle(
                                 color: Color(0xFF6B7280),
-                                fontSize: screenWidth * 0.035,
+                                fontSize: screenWidth * 0.03,
                                 fontFamily: 'Mundial',
                               ),
                             ),

@@ -33,7 +33,7 @@ class CrearCitasScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(height: screenHeight * 0.4),
+                      SizedBox(height: screenHeight * 0.57),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: MainButton(

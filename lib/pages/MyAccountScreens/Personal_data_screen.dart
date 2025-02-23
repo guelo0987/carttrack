@@ -30,6 +30,8 @@ class _PersonalDataState extends State<PersonalData> {
                 title: 'Mi cuenta',
                 icon: 'images/icons/account_user_header.png',
               ),
+
+              SizedBox(height: 37),
               Expanded(
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
